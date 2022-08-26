@@ -1,12 +1,18 @@
 .App {
-  background-color: white;
+  background-color: #f1f8fe;
   min-height: 80vh;
   width: 400px;
   margin: 20px auto;
+  padding: 10px;
+  border-radius: 10%;
 }
 
 body {
-  background-color: #62c2c8;
+  background-color: #8dddfd;
+}
+
+img {
+  border-radius: 10%;
 }
 
 .crossed {
@@ -46,4 +52,7 @@ font-family: 'Montserrat', sans-serif;
 
 input {
   width: 70%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 5px;
 }

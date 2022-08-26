@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import check from './check.png'
 
-export class GrocerList extends Component {
+export class ToDoList extends Component {
     state = {
         userInput: '',
-        groceryList: []
+        mylist: []
     }
-
+    
     onChangeEvent(e){
         this.setState({userInput:e});
     }
@@ -16,15 +16,15 @@ export class GrocerList extends Component {
             alert('Please enter an item')
         }
         else{
-            let listArray = this.state.groceryList;
+            let listArray = this.state.mylist;
             listArray.push(input);
-            this.setState({groceryList: listArray, userInput:''})
+            this.setState({mylist: listArray, userInput:''})
         }
     }
     deleteItem() {
-        let listArray = this.state.groceryList;
+        let listArray = this.state.mylist;
         listArray = [];
-        this.setState({groceryList: listArray});
+        this.setState({mylist: listArray});
     }
 
     crossedWord(event){
@@ -41,7 +41,7 @@ export class GrocerList extends Component {
             <form onSubmit={this.onFormSubmit}>
                 <div className='container'>
                     <input type="text"
-                            placeholder="What do you whant to buy today?"
+                            placeholder="What do you need to do today?"
                             onChange={(e)=>{this.onChangeEvent(e.target.value)}}
                             value = {this.state.userInput}/>
                 </div>
@@ -51,9 +51,9 @@ export class GrocerList extends Component {
                     Add</button>
                 </div>    
                 <ul>
-                   {this.state.groceryList.map((item, index)=> (
-                   <li onClick={this.crossedWord} key={index}>
-                    <img src = {check} width = "30px" alt = "check-box"/>
+                   {this.state.mylist.map((item, index)=> (
+                   <li onClick={ this.crossedWord } key={ index }>
+                    <img src = { check } width = "30px" alt = "check-box"/>
                     {item}
                    </li>
                    ))}
